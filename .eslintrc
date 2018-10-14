@@ -1,5 +1,5 @@
 {
-  "extends": "eslint:recommended",
+  //"extends": "eslint:recommended",
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
@@ -24,6 +24,7 @@
     "arrow-body-style": "off",
     "no-multiple-empty-lines": ["warn", {"max": 1}],
     "indent": ["error",4],
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "jsx-quotes": ["error", "prefer-double"]
   }
 }

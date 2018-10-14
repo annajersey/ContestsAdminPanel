@@ -1,23 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Home from "./components/Home.js";
 import Login from "./components/Login";
+import Header from "./components/Header";
+import "./styles/styles.scss";
+import NotFound from "./components/NotFound";
 
-const isAdminLogin = false;
-const routing = (<BrowserRouter>
-    <main>
-        <Switch>
-            <Route exact path="/login" component={Login}/>
-            <Route render={(props) => (
-                isAdminLogin ? (
-                    <Home/>
-                ) : (
-                    <Redirect to="/login"/>
-                )
-            )}/>
-        </Switch>
-    </main>
-</BrowserRouter>)
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {isAdminLogin: localStorage.isLoggedIn};
+    }
 
-ReactDOM.render(routing, document.getElementById("root"));
+    setLoggedIn() {
+        localStorage.setItem("isLoggedIn", true);
+        this.setState({
+            isAdminLogin: true
+        });
+    }
+
+    render() {
+        return (<BrowserRouter>
+            <main><Header isAdminLogin={this.state.isAdminLogin} />
+                <Switch>
+                    <Route exact path="/login"
+                        render={(props) => <Login {...props} setLoggedIn={() => this.setLoggedIn()}/>}/>
+                    <Route render={(props) => (
+                        this.state.isAdminLogin ? (
+                            <Home {...props} />
+                        ) : (
+                            <Redirect to="/login"/>
+                        )
+                    )}/>
+                </Switch>
+            </main>
+        </BrowserRouter>);
+    }
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
