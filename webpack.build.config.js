@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index-bundle.js",
-        publicPath: '/dist'
+        publicPath: '/anna.bogomiagkova/smartpay'
     },
     module: {
         rules: [
@@ -29,7 +29,7 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            name: "./img/[name].[ext]",
+                            name: "/img/[name].[ext]",
                             limit: 10000
                         }
                     },

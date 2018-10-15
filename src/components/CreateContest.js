@@ -19,7 +19,7 @@ class CreateContest extends React.Component {
                 <div className="formGroup">
                     <label htmlFor="brief">Brief</label>
                     <textarea name="brief" id="brief" placeholder="Enter a brief description"
-                        maxlength="500"></textarea>
+                        maxLength="500"></textarea>
                 </div>
                 <div className="formGroup">
                     <label htmlFor="hashtags">Hashtags</label>

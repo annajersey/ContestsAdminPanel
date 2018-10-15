@@ -1,0 +1,21 @@
+.createContest {
+    padding-left: 100px;
+    div {
+        display: flex;
+    }
+    textarea {
+        height: 187px;
+    }
+    select {
+        width: 100%;
+        border: 1px solid #E5E5E5;
+        border-radius: 5px;
+        height: 32px;
+        color: #666;
+    }
+
+    button {
+        width: 200px
+    }
+}
+

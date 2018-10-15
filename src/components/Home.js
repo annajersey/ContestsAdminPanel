@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {Link, Route, Switch} from "react-router-dom";
 import CreateContest from "./CreateContest";
-import Test2 from "./Test2";
+import ContestsList from "./ContestsList";
+import Contest from "./Contest";
 import Nav from "./Nav";
 import NotFound from "./NotFound";
 
@@ -16,8 +17,8 @@ class Home extends Component {
                 <Nav />
                 <div className="content">
                     <Route  path="/create-contest" component={CreateContest} />
-                    <Route  path="/test2" component={Test2} />
-                    {/*<Route component={NotFound} />*/}
+                    <Route  path="/contests-list" component={ContestsList} />
+                    <Route  path="/contest/:id" component={Contest} />
                 </div>
             </div>
 

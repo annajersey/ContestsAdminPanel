@@ -13,8 +13,8 @@ class Nav extends React.Component {
             <nav>
                 <div>
                     <NavLink to="/create-contest" activeClassName="active">Create Contest</NavLink>
-                    <NavLink to="/test2" activeClassName="active">Contests List</NavLink>
-                    <NavLink to="/test3" activeClassName="active">Settings</NavLink>
+                    <NavLink to="/contests-list" activeClassName="active">Contests List</NavLink>
+                    <NavLink to="/settings" activeClassName="active">Settings</NavLink>
                 </div>
             </nav>
         );

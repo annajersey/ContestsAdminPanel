@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 
-import "../styles/styles.scss";
+import "../assets/styles/styles.scss";
 import {Redirect} from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        if (localStorage.getItem("isLoggedIn")) props.history.push("/admin");
+        if (localStorage.getItem("isLoggedIn")) props.history.push("/create-contest");
         this.initialState = {
             login: "",
             password: "",

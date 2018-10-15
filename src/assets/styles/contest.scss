@@ -1,0 +1,53 @@
+.header {
+    background: url(../images/contestHeader.png) no-repeat left top;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+}
+.switcher {
+    text-align: center;
+    .button {
+        background: white;
+    }
+}
+.contest {
+    padding-top: 40px;
+}
+.contestContent {
+    padding-top: 40px;
+}
+.brief {
+    margin: 0 auto;
+    width: 50%;
+}
+.leaderBoard {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.member {
+    margin: 10px 23px;
+
+    .photo {
+        border-radius: 5px;
+        overflow: hidden;
+        .number {
+            width: 45px;
+            height: 45px;
+            line-height:42px;
+            border: solid 3px #ffffff;
+            background-color: #00bee4;
+            font-family: SourceSansPro, Arial, sans-serif;
+            font-size: 21px;
+            font-weight: bold;
+            border-radius: 50%;
+            position: absolute;
+            margin-left: -17px;
+            margin-top: -17px;
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+}

@@ -24,15 +24,16 @@ input, textarea {
     color: #666;
     font-size: 17px;
     outline: none;
+    padding: 7px 15px;
     &:focus {
         outline: none;
     }
 }
 input[type="text"], input[type="password"] {
     height: 36px;
-    padding: 7px 15px;
+
 }
-button {
+form button {
     height: 43px;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, .16);
     color: #FFF;
@@ -56,7 +57,7 @@ label {
     color: #606060;
     font-size: 21px;
     font-weight: bold;
-    width: 240px;
+    min-width: 240px;
     display: inline-block;
 }
 header {
@@ -102,6 +103,7 @@ header {
 }
 .container {
     display: table;
+    width:100%;
     height: calc(100vh - 74px);
 }
 .content {
@@ -143,6 +145,7 @@ nav {
     }
 }
 
-@import 'login.scss';
-
-@import 'createContest.scss';
+@import 'login';
+@import 'createContest';
+@import 'contestsList';
+@import 'contest';

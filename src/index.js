@@ -4,7 +4,7 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Home from "./components/Home.js";
 import Login from "./components/Login";
 import Header from "./components/Header";
-import "./styles/styles.scss";
+import "./assets/styles/styles.scss";
 import NotFound from "./components/NotFound";
 
 class App extends React.Component {
@@ -21,18 +21,19 @@ class App extends React.Component {
     }
 
     render() {
-        return (<BrowserRouter>
+        return (<BrowserRouter basename="/">
             <main><Header isAdminLogin={this.state.isAdminLogin} />
                 <Switch>
                     <Route exact path="/login"
                         render={(props) => <Login {...props} setLoggedIn={() => this.setLoggedIn()}/>}/>
-                    <Route render={(props) => (
+                    <Route  path="/" render={(props) => (
                         this.state.isAdminLogin ? (
                             <Home {...props} />
                         ) : (
                             <Redirect to="/login"/>
                         )
                     )}/>
+
                 </Switch>
             </main>
         </BrowserRouter>);

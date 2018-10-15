@@ -1,0 +1,24 @@
+.constestList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 12px;
+    width: 100%;
+}
+.constestBlock {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 3px 10px rgba(229, 229, 229, .8);
+    margin: 10px;
+    img {
+        width: 100%
+    }
+    h2 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .info {
+        display: flex;
+        justify-content: space-between;
+    }
+}
