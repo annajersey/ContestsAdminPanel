@@ -32,6 +32,9 @@
     .photo {
         border-radius: 5px;
         overflow: hidden;
+        width:130px;
+        height:130px;
+        img{width:100%;}
         .number {
             width: 45px;
             height: 45px;
