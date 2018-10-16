@@ -12,7 +12,7 @@ class Contest extends Component {
     render() {
         return (
             <div>
-                <div className="header"><img src={require("../assets/images/ch.png")}/></div>
+                <div className="header"></div>
                 <div className="contest">
                     {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
                     <div className="switcher">

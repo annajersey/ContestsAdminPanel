@@ -1,13 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const basePath = '/anna.bogomiagkova/smartpay';
 module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index-bundle.js",
-        publicPath: '/anna.bogomiagkova/smartpay'
+        publicPath: basePath
     },
     module: {
         rules: [
@@ -74,7 +74,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new webpack.DefinePlugin({
-            baseURL: JSON.stringify('/anna.bogomiagkova/smartpay')
+            baseURL: JSON.stringify(basePath)
         })
     ]
 };
