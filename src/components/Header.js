@@ -1,22 +1,35 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
+import Notifications from '../assets/images/notifications.svg';
+import Icon from '../assets/images/icon.svg';
+import Logo from '../assets/images/logo.svg';
 class Header extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return (
             <header>
-                <div className="logo">SmartPay</div>
+                <div className="sandwich">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div className="logo"><Logo width="30" height="30" /><span>SmartPay</span></div>
                 {
                     this.props.isAdminLogin &&
                     <div className="userPanel">
-                        <div className="notifications"></div>
-                        <div className="profile" onClick={()=>{localStorage.setItem("isLoggedIn", ""); this.props.history.push("/login");}}>Admin</div>
+                        <div className="notifications"><Notifications/></div>
+                        <div className="profile" onClick={() => {
+                            localStorage.setItem("isLoggedIn", "");
+                            this.props.history.push("/login");
+                        }}><Icon/><span>Admin</span></div>
                     </div>
                 }
             </header>
         );
     }
 }
+
 export default withRouter(Header);

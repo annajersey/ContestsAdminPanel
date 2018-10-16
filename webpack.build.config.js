@@ -12,10 +12,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
+
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
@@ -30,7 +31,7 @@ module.exports = {
                     {
                         loader: "url-loader",
                         options: {
-                            name: "/img/[name].[ext]",
+                            name: "/img/[path]/[name].[ext]",
                             limit: 10000
                         }
                     },
@@ -39,7 +40,30 @@ module.exports = {
                     }
                 ]
             },
-
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: "babel-loader"
+                    },
+                    {
+                        loader: "react-svg-loader",
+                        options: {
+                            jsx: true // true outputs JSX tags
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "/fonts/"
+                    }
+                }]
+            }
         ]
     },
     devServer: {

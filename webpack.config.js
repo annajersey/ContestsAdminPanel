@@ -1,12 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index-bundle.js",
-        publicPath: '/'
+        publicPath: "/"
     },
     module: {
         rules: [
@@ -26,11 +27,12 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g)/i,
+                //include: path.join(__dirname, 'assets/images/'),
                 use: [
                     {
                         loader: "url-loader",
                         options: {
-                            name: "./img/[name].[ext]",
+                            name: "./img/[path]/[name].[ext]",
                             limit: 10000
                         }
                     },
@@ -39,7 +41,30 @@ module.exports = {
                     }
                 ]
             },
-
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: "babel-loader"
+                    },
+                    {
+                        loader: "react-svg-loader",
+                        options: {
+                            jsx: true // true outputs JSX tags
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "fonts/"
+                    }
+                }]
+            }
         ]
     },
     devServer: {
@@ -50,7 +75,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new webpack.DefinePlugin({
-            baseURL: JSON.stringify('/')
+            baseURL: JSON.stringify("/")
         })
     ]
 };

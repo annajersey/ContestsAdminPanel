@@ -4,21 +4,43 @@
     justify-content: space-around;
     font-size: 12px;
     width: 100%;
+    .shortInfo {
+        padding: 20px;
+    }
 }
 .constestBlock {
-    width: 400px;
-    height: 400px;
-    box-shadow: 0 3px 10px rgba(229, 229, 229, .8);
-    margin: 10px;
-    img {
-        width: 100%
+    width: 355px;
+    height: 268px;
+    box-shadow: 0px 2px 19px rgb(229, 229, 229);
+    margin: 20px;
+    img.topImage {
+        width: 100%;
+        cursor:pointer;
     }
     h2 {
-        font-size: 14px;
-        font-weight: bold;
+        margin: 0;
+        font-size: 16px;
+        font-weight: normal;
+        color: #35343d;
+        cursor:pointer;
     }
     .info {
         display: flex;
         justify-content: space-between;
+        margin-top: 18px;
+        font-size: 14px;
+        line-height: 1.21;
+        color: #35343d;
+    }
+    .briefDesc {
+        font-size: 14px;
+        color: #666666;
+        line-height: 1.5;
+    }
+    .timer {
+        line-height: 24px;
+        img {
+            margin-right: 4px;
+        }
     }
 }

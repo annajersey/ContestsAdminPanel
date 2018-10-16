@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import Leaderboard from "./Leaderboard";
 
-
-
 class Contest extends Component {
     constructor(props) {
         super(props);
@@ -14,15 +12,14 @@ class Contest extends Component {
     render() {
         return (
             <div>
-
-                <div className="header">Contest <h3>ID: {this.props.match.params.id}</h3></div>
+                <div className="header"><img src={require("../assets/images/ch.png")}/></div>
                 <div className="contest">
-
+                    {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
                     <div className="switcher">
-                        <button className={this.state.page === "l" ? "active" : ""}
+                        <button className={this.state.page === "l" ? "active leaderboardButton" : "leaderboardButton"}
                                 onClick={() => this.setState({page: "l"})}>Leaderboard
                         </button>
-                        <button className={this.state.page === "b" ? "active" : ""}
+                        <button className={this.state.page === "b" ? "active briefButton" : "briefButton"}
                                 onClick={() => this.setState({page: "b"})}>Brief
                         </button>
                     </div>

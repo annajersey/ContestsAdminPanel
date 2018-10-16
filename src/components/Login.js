@@ -6,7 +6,7 @@ import {Redirect} from "react-router-dom";
 class Login extends Component {
     constructor(props) {
         super(props);
-        if (localStorage.getItem("isLoggedIn")) props.history.push("/create-contest");
+        if (localStorage.getItem("isLoggedIn")) props.history.push("/contests-list");
         this.initialState = {
             login: "",
             password: "",
@@ -19,7 +19,7 @@ class Login extends Component {
         e.preventDefault();
         if (this.state.login === "admin" && this.state.password === "admin") {
             this.props.setLoggedIn();
-            this.props.history.push("/");
+            this.props.history.push("/contests-list");
         } else {
             this.setState({...this.initialState});
         }

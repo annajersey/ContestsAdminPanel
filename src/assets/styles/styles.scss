@@ -2,6 +2,16 @@
     box-sizing: border-box;
     vertical-align: top;
 }
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("../fonts/SF-Pro-Text-Regular.otf"),
+    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+    url('../fonts/sf-pro-text-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 a {
     text-decoration: none;
 }
@@ -71,10 +81,14 @@ header {
     padding-left: 32px;
     position: relative;
     .logo {
-        color: #0084C3;
-        font-size: 20px;
+        margin-left: 30px;
+        display: flex;
         font-weight: bold;
-        line-height: 24px;
+        align-items: center;
+        font-size: 20px;
+        color: #0084c3;
+        justify-content: space-around;
+        width: 135px;
     }
     .userPanel {
         margin-left: auto;
@@ -89,6 +103,9 @@ header {
         .notifications {
             width: 60px;
             height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
         }
         .profile {
             color: #666;
@@ -96,14 +113,29 @@ header {
             font-weight: bold;
             width: 110px;
             height: 100%;
-            line-height: 74px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            span {
+                margin-left: 8px;
+            }
         }
     }
 }
+.sandwich {
+    cursor: pointer;
+    div {
+        width: 24px;
+        height: 4px;
+        margin-top: 4px;
+        background: #0084c3;
+        border-radius: 6px;
+    }
+}
+
 .container {
     display: table;
-    width:100%;
+    width: 100%;
     height: calc(100vh - 74px);
 }
 .content {
@@ -144,7 +176,6 @@ nav {
         }
     }
 }
-
 @import 'login';
 @import 'createContest';
 @import 'contestsList';

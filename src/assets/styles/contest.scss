@@ -1,13 +1,35 @@
 .header {
-    background: url(../images/contestHeader.png) no-repeat left top;
-    background-size: cover;
+    //background: url("/img/contestHeader.png") no-repeat left top;
+    //background-size: cover;
     width: 100%;
-    height: 250px;
+    height: 295px;
+    img {
+        width: 100%;
+    }
 }
 .switcher {
     text-align: center;
-    .button {
-        background: white;
+    button {
+        $borderRadius: 6px;
+        background: #fff;
+        border: 1px solid #383B41;
+        height: 25px;
+        width: 175px;
+        cursor: pointer;
+        &.briefButton {
+            border-radius: 0 $borderRadius $borderRadius 0;
+        }
+        &.leaderboardButton {
+            border-radius: $borderRadius 0 0 $borderRadius;
+        }
+        &.active {
+            background: #383B41;
+            color: #fff;
+        }
+        &:focus{
+            outline:none;
+
+        }
     }
 }
 .contest {
@@ -32,13 +54,15 @@
     .photo {
         border-radius: 5px;
         overflow: hidden;
-        width:130px;
-        height:130px;
-        img{width:100%;}
+        width: 130px;
+        height: 130px;
+        img {
+            width: 100%;
+        }
         .number {
             width: 45px;
             height: 45px;
-            line-height:42px;
+            line-height: 42px;
             border: solid 3px #ffffff;
             background-color: #00bee4;
             font-family: SourceSansPro, Arial, sans-serif;
