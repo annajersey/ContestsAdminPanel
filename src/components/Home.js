@@ -5,6 +5,7 @@ import ContestsList from "./ContestsList";
 import Contest from "./Contest";
 import Nav from "./Nav";
 import NotFound from "./NotFound";
+import Leaderboard from "./Leaderboard";
 
 class Home extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Home extends Component {
                     <Route  path="/create-contest" component={CreateContest} />
                     <Route  path="/contests-list" component={ContestsList} />
                     <Route  path="/contest/:id" component={Contest} />
+                    <Route  path="/leaderboard" component={Leaderboard} />
                 </div>
             </div>
 

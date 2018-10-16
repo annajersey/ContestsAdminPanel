@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -11,10 +11,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
+
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
@@ -47,6 +48,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html"
+        }),
+        new webpack.DefinePlugin({
+            baseURL: JSON.stringify('/')
         })
     ]
 };
