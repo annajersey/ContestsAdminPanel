@@ -1,7 +1,46 @@
+.constestPage{
+
+}
 .header {
-    background: url("../images/ch.png") no-repeat left top;
+    background: url("../images/contestsHeader.png") no-repeat left top;
     background-size: cover;
     height: 295px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
+    font-size: 22px;
+    padding-left: 115px;
+    padding-right: 50px;
+
+    div {
+        height: 100px;
+        h1 {
+            font-size: 28px;
+            margin: 0 0 6px 0;
+            color: #fff;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 28px;
+            color: #ebebeb;
+            margin: 0;
+            font-weight: normal;
+        }
+        &.contestTime {
+            font-size: 24px;
+            line-height: 23px;
+            font-family: "Source Sans Pro", "SF Pro Text", Arial, sans-serif;
+        }
+        span {
+            display: block;
+            &.contestValue {
+                margin-top: 5px;
+                color: #ebebeb;
+            }
+
+        }
+    }
 }
 .switcher {
     text-align: center;
@@ -22,8 +61,8 @@
             background: #383B41;
             color: #fff;
         }
-        &:focus{
-            outline:none;
+        &:focus {
+            outline: none;
 
         }
     }
@@ -32,7 +71,9 @@
     padding-top: 40px;
 }
 .contestContent {
-    padding-top: 40px;
+    margin-top: 40px;
+    height: calc(100vh - 480px);
+    overflow-y: scroll;
 }
 .brief {
     margin: 0 auto;
@@ -43,10 +84,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+
 }
 .member {
     margin: 10px 23px;
-
+    position: relative;
     .photo {
         border-radius: 5px;
         overflow: hidden;

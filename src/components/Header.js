@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
-import Notifications from '../assets/images/notifications.svg';
+import Notifications from '../assets/images/notification.svg';
 import Icon from '../assets/images/icon.svg';
 import Logo from '../assets/images/logo.svg';
 class Header extends Component {
@@ -16,7 +16,7 @@ class Header extends Component {
                     <div></div>
                     <div></div>
                 </div>
-                <div className="logo"><Logo width="30" height="30" /><span>SmartPay</span></div>
+                <div className="logo"><img src={require("../assets/images/logo.png")}/></div>
                 {
                     this.props.isAdminLogin &&
                     <div className="userPanel">

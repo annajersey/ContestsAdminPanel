@@ -12,6 +12,13 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../fonts/SourceSansPro-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+
+}
 a {
     text-decoration: none;
 }
@@ -140,6 +147,8 @@ header {
 }
 .content {
     display: table-cell;
+
+
 }
 nav {
     padding-top: 6px;
