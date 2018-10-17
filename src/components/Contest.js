@@ -35,20 +35,20 @@ class Contest extends Component {
                         </div>}
                         {this.state.page === "b" &&
                         <div className="brief">
-                            {/*<div>*/}
-                                {/*<h3>About the brand</h3>*/}
-                                {/*Some text about the brand. This could be images of our coffee being made in a cup, mug*/}
-                                {/*or jar. We'd love your posts to be coffee-inspired, showcasing our brand alongside your*/}
-                                {/*daily routine. In your caption, talk about our product and tell the best coffee offer to*/}
-                                {/*your followers!*/}
-                            {/*</div>*/}
-                            {/*<div>*/}
-                                {/*<h3>Content text</h3>*/}
-                                {/*We'd love your posts to generate enthusiasm about buying the product. This could be*/}
-                                {/*images of our coffee being made in a cup, mug or jar. We'd love your posts to be*/}
-                                {/*coffee-inspired, showcasing our brand alongside your daily routine. In your caption,*/}
-                                {/*talk about our product and tell the best coffee offer to your followers!*/}
-                            {/*</div>*/}
+                            <div>
+                                <h3>About the brand</h3>
+                                Some text about the brand. This could be images of our coffee being made in a cup, mug
+                                or jar. We'd love your posts to be coffee-inspired, showcasing our brand alongside your
+                                daily routine. In your caption, talk about our product and tell the best coffee offer to
+                                your followers!
+                            </div>
+                            <div>
+                                <h3>Content text</h3>
+                                We'd love your posts to generate enthusiasm about buying the product. This could be
+                                images of our coffee being made in a cup, mug or jar. We'd love your posts to be
+                                coffee-inspired, showcasing our brand alongside your daily routine. In your caption,
+                                talk about our product and tell the best coffee offer to your followers!
+                            </div>
                             <img src={require("../assets/images/contestImage.png")}/>
                         </div>}
                     </div>
