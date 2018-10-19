@@ -32,7 +32,9 @@
         &.contestTime {
             font-size: 24px;
             line-height: 23px;
+            width:300px;
             font-family: "Source Sans Pro", "SF Pro Text", Arial, sans-serif;
+
         }
         span {
             display: block;
@@ -110,7 +112,7 @@
         display: inline-block;
         z-index: 99;
         .member{
-            box-shadow:1px 1px 4px #2a2a2a;
+            box-shadow:1px 1px 4px #383838;
 
         }
     }

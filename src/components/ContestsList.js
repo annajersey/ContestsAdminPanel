@@ -42,18 +42,18 @@ class ContestsList extends React.Component {
                         </div>
                     </div>;
                 })}
-                {[1, 2, 3].map(i => {
-                    return <div key={i} className="constestBlock">
-                        <img className="topImage" onClick={() => this.onContestClick(i)}
-                             src={require("../assets/images/contests/" + i + ".png")}/>
-                        <div className="shortInfo">
-                            <h2 onClick={() => this.onContestClick(i)}>Bershka</h2>
-                            <div className="briefDesc">One of the best fashion shop</div>
-                            <div className="info"><span>12 Giveaway</span><span className="timer"><img
-                                src={require("../assets/images/timer.png")}/>36:32:25</span></div>
-                        </div>
-                    </div>;
-                })}
+                {/*{[1, 2, 3].map(i => {*/}
+                    {/*return <div key={i} className="constestBlock">*/}
+                        {/*<img className="topImage" onClick={() => this.onContestClick(i)}*/}
+                             {/*src={require("../assets/images/contests/" + i + ".png")}/>*/}
+                        {/*<div className="shortInfo">*/}
+                            {/*<h2 onClick={() => this.onContestClick(i)}>Bershka</h2>*/}
+                            {/*<div className="briefDesc">One of the best fashion shop</div>*/}
+                            {/*<div className="info"><span>12 Giveaway</span><span className="timer"><img*/}
+                                {/*src={require("../assets/images/timer.png")}/>36:32:25</span></div>*/}
+                        {/*</div>*/}
+                    {/*</div>;*/}
+                {/*})}*/}
             </div>
         );
     }

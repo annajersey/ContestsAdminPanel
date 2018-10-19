@@ -36,7 +36,7 @@ class Contest extends Component {
                 <div className="header">
                     <div><h1>{this.state.contest.name}</h1><h2>{this.state.contest.address}</h2></div>
                     <div><span>Campaign value:</span><span className="contestValue">10 000$</span></div>
-                    <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;<Timer expirationTime={this.state.contest.expirationTime} /></div>
+                    <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;{this.state.contest.expirationTime&&<Timer expirationTime={this.state.contest.expirationTime} />}</div>
                 </div>
                 <div className="contest">
                     {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
@@ -66,7 +66,7 @@ class Contest extends Component {
                                 coffee-inspired, showcasing our brand alongside your daily routine. In your caption,
                                 talk about our product and tell the best coffee offer to your followers!
                             </div>
-                            <img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>
+                            {this.state.contest.imageId&&<img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>}
                         </div>}
                     </div>
                 </div>

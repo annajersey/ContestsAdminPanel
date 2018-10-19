@@ -2,7 +2,9 @@ import React, {Component} from "react";
 class Timer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {timer:this.msToTime(props.expirationTime)};
+        this.state = {
+            timer:this.msToTime(props.expirationTime)
+        };
 
     }
     componentDidMount(){
@@ -15,7 +17,7 @@ class Timer extends React.Component {
 
     msToTime(expirationTime){
         var dateDiff = new Date(expirationTime) - new Date();
-        if(dateDiff<0) return 0;
+        if(dateDiff<0) return '00:00:00';
         let seconds = (dateDiff / 1000);
         let minutes = parseInt(seconds / 60, 10);
         seconds = parseInt(seconds % 60);
@@ -28,6 +30,7 @@ class Timer extends React.Component {
     }
 
     render() {
+
         return (
             <React.Fragment>
                 {this.state.timer}
