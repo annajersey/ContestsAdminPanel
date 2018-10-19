@@ -1,22 +1,42 @@
 import React, {Component} from "react";
 import Leaderboard from "./Leaderboard";
-import Timer from '../assets/images/timer-w.svg';
+import TimerIcon from '../assets/images/timer-w.svg';
+import * as axios from "axios";
+import Timer from "./Timer";
 
 class Contest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: "l"
+            page: "l",
+            contest: {
+                name:'Bershka',
+                address: 'Yoga Trapeze - SAMPLING',
+
+            }
         };
+    }
+
+    componentDidMount() {
+        axios({
+            url: "http://b.dcodeit.net:8080/smartpay/contest/" + this.props.match.params.id,
+        })
+            .then(response => {
+
+                this.setState({contest: response.data});
+            })
+            .catch((response) => {
+                console.log("error", response);
+            });
     }
 
     render() {
         return (
             <div className="constestPage">
                 <div className="header">
-                    <div><h1>Yogabody</h1><h2>Yoga Trapeze - SAMPLING</h2></div>
+                    <div><h1>{this.state.contest.name}</h1><h2>{this.state.contest.address}</h2></div>
                     <div><span>Campaign value:</span><span className="contestValue">10 000$</span></div>
-                    <div className="contestTime"><Timer/>&nbsp;&nbsp;00:03:15</div>
+                    <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;<Timer expirationTime={this.state.contest.expirationTime} /></div>
                 </div>
                 <div className="contest">
                     {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
@@ -36,11 +56,8 @@ class Contest extends Component {
                         {this.state.page === "b" &&
                         <div className="brief">
                             <div>
-                                <h3>About the brand</h3>
-                                Some text about the brand. This could be images of our coffee being made in a cup, mug
-                                or jar. We'd love your posts to be coffee-inspired, showcasing our brand alongside your
-                                daily routine. In your caption, talk about our product and tell the best coffee offer to
-                                your followers!
+                                <h3>{this.state.contest.name}</h3>
+                                {this.state.contest.description}
                             </div>
                             <div>
                                 <h3>Content text</h3>
@@ -49,7 +66,7 @@ class Contest extends Component {
                                 coffee-inspired, showcasing our brand alongside your daily routine. In your caption,
                                 talk about our product and tell the best coffee offer to your followers!
                             </div>
-                            <img src={require("../assets/images/contestImage.png")}/>
+                            <img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>
                         </div>}
                     </div>
                 </div>

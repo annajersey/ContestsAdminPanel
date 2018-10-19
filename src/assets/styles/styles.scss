@@ -2,22 +2,22 @@
     box-sizing: border-box;
     vertical-align: top;
 }
+
 @font-face {
     font-family: "SF Pro Text";
     src: url("../fonts/SF-Pro-Text-Regular.otf"),
-    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
-    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
-    url('../fonts/sf-pro-text-regular-webfont.woff') format('woff');
+        url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+        url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+        url('../fonts/sf-pro-text-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+
 @font-face {
     font-family: "Source Sans Pro";
     src: url("../fonts/SourceSansPro-Regular.otf");
     font-weight: normal;
     font-style: normal;
-
 }
 a {
     text-decoration: none;
@@ -40,7 +40,6 @@ input, textarea {
     width: 340px;
     outline: none;
     font-family: "SF Pro Text", Arial, sans-serif;
-
 }
 select, input, textarea {
     padding: 7px 15px;
@@ -53,7 +52,6 @@ select, input, textarea {
 }
 input[type="text"], input[type="password"] {
     height: 36px;
-
 }
 form button.submit {
     height: 43px;
@@ -157,7 +155,7 @@ nav {
     min-width: 265px;
     background: #F5FDFE;
     display: table-cell;
-    width:265px;
+    width: 265px;
     div {
         display: flex;
         flex-direction: column;
@@ -188,7 +186,11 @@ nav {
         }
     }
 }
+
 @import 'login';
+
 @import 'createContest';
+
 @import 'contestsList';
+
 @import 'contest';

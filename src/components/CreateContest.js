@@ -17,7 +17,7 @@ class CreateContest extends React.Component {
             startdate: moment(),
             contestValue: "",
             image: null,
-            errors:[]
+            errors: []
 
         };
 
@@ -25,14 +25,17 @@ class CreateContest extends React.Component {
 
     Send(e) {
         e.preventDefault();
-        let errors=[];
-        let expirationTime = this.state.startdate.add(this.state.timeframe, "days").format();
+        const errors = [];
+        const expirationTime = this.state.startdate.add(this.state.timeframe, "days").format();
         const formData = new FormData(this.form);
         formData.append("expirationTime", expirationTime);
         formData.append("address", this.state.hashtags);
-        if (this.state.image !== null) formData.append("image", this.state.image, this.state.image.name);
-        else {errors.push("Please select image");}
-        if(!this.state.name) errors.push("Please enter contest name");
+        if (this.state.image !== null) {formData.append("image", this.state.image, this.state.image.name);}
+        else {
+            errors.push("Please select image");
+        }
+        if (!this.state.name) {errors.push("Please enter contest name");}
+        if (!this.state.description) {errors.push("Please enter contest brief");}
         // for (var pair of formData.entries()) {
         //     console.log(pair[0] + ', ' + pair[1]);
         // }
@@ -46,11 +49,11 @@ class CreateContest extends React.Component {
                 data: formData,
                 config: {headers: {"Content-Type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW"}}
             })
-                .then( response=> {
+                .then(response => {
                     console.log(response);
                     this.props.history.push("/contests-list/");
                 })
-                .catch( (response) => {
+                .catch((response) => {
                     console.log("error", response);
                 });
         }
@@ -64,7 +67,7 @@ class CreateContest extends React.Component {
         return (
             <form className="createContest" ref={(f) => this.form = f}>
                 <h1>Create new contest</h1>
-                <div className="errors">{this.state.errors.map(e=><div>{e}</div>)}</div>
+                <div className="errors">{this.state.errors.map(e => <div>{e}</div>)}</div>
                 <div className="formGroup">
                     <label htmlFor="name">Brand name</label>
                     <input type="text" name="name" id="name" value={this.state.name}

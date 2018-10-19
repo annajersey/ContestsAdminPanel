@@ -1,7 +1,6 @@
 
 .header {
     background: url("../images/ch.png") repeat left top;
-
     height: 295px;
     display: flex;
     justify-content: flex-start;
@@ -41,7 +40,6 @@
                 margin-top: 5px;
                 color: #DCDCDC;
             }
-
         }
     }
 }
@@ -66,7 +64,6 @@
         }
         &:focus {
             outline: none;
-
         }
     }
 }
@@ -75,22 +72,22 @@
 }
 .contestContent {
     margin-top: 20px;
-
 }
 .brief {
-    margin: 40px auto;
+    margin: 50px auto;
     width: 442px;
     font-size: 14px;
     line-height: 1.5;
-    color: #666666;
+    color: #666;
     div {
         border-bottom: 1px solid #c1c7d0;
         padding-bottom: 10px;
+        margin-bottom:10px;
     }
     h3 {
         font-weight: bold;
         color: #383b41;
-        margin: 20px 0;
+        margin: 10px 0;
         font-size: 14px;
         text-transform: uppercase;
     }
@@ -100,31 +97,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-
 }
 .submissionMember {
     position: relative;
-}
-.member {
-    margin: 30px 20px;
-    background: #fff;
-    border-radius: 4px;
-    padding: 6px;
-    border: 2px solid transparent;
+    padding:3px;
     &.sortable-ghost {
         opacity: 0;
     }
     &.sortable-drag {
         opacity: 1;
-        border: 2px solid #C6C6C6;
+       // border: 2px solid #C6C6C6;
         display: inline-block;
         z-index: 99;
-    }
+        .member{
+            box-shadow:1px 1px 4px #2a2a2a;
 
+        }
+    }
+    margin: 30px 20px;
+
+}
+.member {
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
     .userName {
         margin-top: 15px;
         font-size: 20px;
-        color: #666666;
+        color: #666;
         line-height: 1.2;
     }
     .socials {
@@ -139,16 +139,16 @@
         overflow: hidden;
         width: 130px;
         height: 130px;
+        cursor: pointer;
         img {
             width: 100%;
         }
-
     }
     .number {
         width: 45px;
         height: 45px;
         line-height: 40px;
-        border: solid 3px #ffffff;
+        border: solid 3px #fff;
         background-color: #00bee4;
         font-family: "Source Sans Pro", Arial, sans-serif;
         font-size: 21px;
@@ -161,24 +161,27 @@
         text-align: center;
         .new {
             font-size: 16px;
-
         }
     }
-
 }
 .submission {
     position: absolute;
     padding: 16px;
     width: 386px;
     height: auto;
-    box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.16);
-    background-color: #ffffff;
+    box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, .16);
+    background-color: #fff;
     top: 70px;
     font-size: 14px;
+    z-index: 5;
     .closeSubmission {
         color: #00bee4;
-        font-size: 30px;
+        position: absolute;
+        right: 9px;
+        top: 0;
+        font-size: 24px;
         font-weight: bold;
+        cursor: pointer;
     }
     .submissionHeader {
         display: flex;
@@ -190,13 +193,13 @@
             margin-right: 12px;
         }
         img {
-            width: 40px
+            width: 40px;
         }
         .userName {
             width: 41px;
             font-size: 12px;
             font-weight: bold;
-            letter-spacing: 0.2px;
+            letter-spacing: .2px;
             color: #383b41;
         }
         svg {
@@ -206,12 +209,11 @@
     .submissionTitle {
         font-weight: bold;
         color: #383b41;
-
         text-transform: uppercase;
     }
     .submissionText {
         line-height: 1.5;
-        color: #666666;
+        color: #666;
         margin: 15px 0;
     }
     .submissionImg {

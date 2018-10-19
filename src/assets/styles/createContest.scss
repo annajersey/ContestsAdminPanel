@@ -5,7 +5,7 @@
         display: flex;
     }
     h1 {
-        margin-bottom: 60px
+        margin-bottom: 60px;
     }
     textarea {
         height: 187px;
@@ -29,26 +29,25 @@
         margin-right: 10px;
         display: flex;
         align-items: center;
-        cursor:pointer;
+        cursor: pointer;
         svg {
             margin-right: 10px;
         }
         span {
             color: #b1b1b1;
         }
-
     }
     .uploadInput {
         position: absolute;
-       opacity:0;
+        opacity: 0;
         width: 150px;
-        overflow: hidden;cursor:pointer;
+        overflow: hidden;cursor: pointer;
     }
-    .errors{
-        font-size:11px;
-        color:red;
+    .errors {
+        font-size: 11px;
+        color: #ff8b89;
         position: absolute;
-        margin-top:-60px
+        margin-top: -50px;
     }
 }
 
