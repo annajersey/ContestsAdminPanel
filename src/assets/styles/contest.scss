@@ -102,20 +102,22 @@
     justify-content: flex-start;
 
 }
+.submissionMember {
+    position: relative;
+}
 .member {
     margin: 30px 20px;
-    position: relative;
     background: #fff;
     border-radius: 4px;
     padding: 6px;
-    border:2px solid transparent;
+    border: 2px solid transparent;
     &.sortable-ghost {
         opacity: 0;
     }
     &.sortable-drag {
         opacity: 1;
-        border:2px solid #C6C6C6;
-        display:inline-block;
+        border: 2px solid #C6C6C6;
+        display: inline-block;
         z-index: 99;
     }
 
@@ -163,4 +165,56 @@
         }
     }
 
+}
+.submission {
+    position: absolute;
+    padding: 16px;
+    width: 386px;
+    height: auto;
+    box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    top: 70px;
+    font-size: 14px;
+    .closeSubmission {
+        color: #00bee4;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .submissionHeader {
+        display: flex;
+        height: auto;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+        * {
+            margin-right: 12px;
+        }
+        img {
+            width: 40px
+        }
+        .userName {
+            width: 41px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+            color: #383b41;
+        }
+        svg {
+            cursor: pointer;
+        }
+    }
+    .submissionTitle {
+        font-weight: bold;
+        color: #383b41;
+
+        text-transform: uppercase;
+    }
+    .submissionText {
+        line-height: 1.5;
+        color: #666666;
+        margin: 15px 0;
+    }
+    .submissionImg {
+        max-width: 100%;
+    }
 }

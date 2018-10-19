@@ -4,8 +4,8 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Home from "./components/Home.js";
 import Login from "./components/Login";
 import Header from "./components/Header";
-import "./assets/styles/styles.scss";
-import NotFound from "./components/NotFound";
+//import "./assets/styles/styles.scss";
+
 
 class App extends React.Component {
     constructor() {

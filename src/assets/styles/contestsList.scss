@@ -6,17 +6,31 @@
     width: 100%;
     .shortInfo {
         padding: 20px;
+        text-align:left;
     }
 }
+
 .constestBlock {
     width: 355px;
-    height: 268px;
+    height: 291px;
     box-shadow: 0px 2px 19px rgb(229, 229, 229);
     margin: 20px;
+    overflow: hidden;
+    text-align: center;
     img.topImage {
-        width: 100%;
+        max-width: 100%;
         cursor:pointer;
+        height:160px;
     }
+    //.topImage2{
+    //    width: 100%;
+    //    cursor:pointer;
+    //    height:160px;
+    //    background-position: center center;
+    //    background-repeat: no-repeat;
+    //    background-size: 100%;
+    //
+    //}
     h2 {
         margin: 0;
         font-size: 16px;
@@ -39,6 +53,7 @@
     }
     .timer {
         line-height: 24px;
+        min-width: 95px;
         img {
             margin-right: 4px;
         }

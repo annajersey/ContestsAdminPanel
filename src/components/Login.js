@@ -39,7 +39,7 @@ class Login extends Component {
                         <input type="password" value={this.state.password}
                             onChange={(e) => this.setState({password: e.target.value})} placeholder="Password"/>
                     </div>
-                    <button onClick={(e) => this.loginAdmin(e)}>Enter</button>
+                    <button className="submit" onClick={(e) => this.loginAdmin(e)}>Enter</button>
                 </form>
             </div>
         );

@@ -1,13 +1,16 @@
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const basePath = "/";
 const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index-bundle.js",
-        publicPath: "/"
+        publicPath: basePath
     },
     module: {
         rules: [
@@ -50,7 +53,25 @@ module.exports = {
                     {
                         loader: "react-svg-loader",
                         options: {
-                            jsx: true // true outputs JSX tags
+                            svgo: {
+                                plugins: [
+                                    {
+                                        removeTitle: true,
+                                    },
+                                    {
+                                        cleanupIDs: {
+                                            prefix: {
+                                                toString() {
+                                                    this.counter = this.counter || 0;
+                                                    return `id-${this.counter++}`;
+                                                }
+                                            }
+                                        }
+                                    },
+                                ],
+                                floatPrecision: 3,
+                            },
+                            jsx: true
                         }
                     }
                 ]
@@ -75,7 +96,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new webpack.DefinePlugin({
-            baseURL: JSON.stringify("/")
+            baseURL: JSON.stringify(basePath)
         })
     ]
 };

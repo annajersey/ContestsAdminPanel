@@ -37,11 +37,16 @@ body {
 input, textarea {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
-    width: 326px;
-    color: #666;
-    font-size: 17px;
+    width: 340px;
     outline: none;
+    font-family: "SF Pro Text", Arial, sans-serif;
+
+}
+select, input, textarea {
     padding: 7px 15px;
+    font-size: 17px;
+    color: #666;
+    font-family: "SF Pro Text", Arial, sans-serif;
     &:focus {
         outline: none;
     }
@@ -50,7 +55,7 @@ input[type="text"], input[type="password"] {
     height: 36px;
 
 }
-form button {
+form button.submit {
     height: 43px;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, .16);
     color: #FFF;
@@ -139,7 +144,6 @@ header {
         border-radius: 6px;
     }
 }
-
 .container {
     display: table;
     width: 100%;
@@ -147,14 +151,13 @@ header {
 }
 .content {
     display: table-cell;
-
-
 }
 nav {
     padding-top: 6px;
     min-width: 265px;
     background: #F5FDFE;
     display: table-cell;
+    width:265px;
     div {
         display: flex;
         flex-direction: column;

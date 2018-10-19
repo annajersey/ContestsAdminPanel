@@ -1,7 +1,8 @@
+//TODO
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const basePath = '/anna.bogomiagkova/smartpay';
+
+const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -27,11 +28,12 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g)/i,
+                //include: path.join(__dirname, 'assets/images/'),
                 use: [
                     {
                         loader: "url-loader",
                         options: {
-                            name: "/img/[path]/[name].[ext]",
+                            name: "./img/[path]/[name].[ext]",
                             limit: 10000
                         }
                     },
@@ -78,7 +80,7 @@ module.exports = {
                     loader: "file-loader",
                     options: {
                         name: "[name].[ext]",
-                        outputPath: "/fonts/"
+                        outputPath: "fonts/"
                     }
                 }]
             }
