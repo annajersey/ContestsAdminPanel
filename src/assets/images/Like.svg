@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="6px" viewBox="0 0 6 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
+    <title>Like</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,25 L14.565,24.5683924 C13.02,23.0414169 12,22.0343324 12,20.7983651 C12,19.7912807 12.726,19 13.65,19 C14.172,19 14.673,19.2648501 15,19.6833787 C15.327,19.2648501 15.828,19 16.35,19 C17.274,19 18,19.7912807 18,20.7983651 C18,22.0343324 16.98,23.0414169 15.435,24.5716621 L15,25 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-app/Leaderboard-popover" transform="translate(-854.000000, -409.000000)">
+            <g id="Popover" transform="translate(842.000000, 390.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Like" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -15,7 +15,7 @@ class CreateContest extends React.Component {
             hashtags: "",
             timeframe: 30,
             startdate: moment(),
-            contestValue: "",
+            value: "",
             image: null,
             errors: []
 
@@ -36,9 +36,10 @@ class CreateContest extends React.Component {
         }
         if (!this.state.name) {errors.push("Please enter contest name");}
         if (!this.state.description) {errors.push("Please enter contest brief");}
-        // for (var pair of formData.entries()) {
-        //     console.log(pair[0] + ', ' + pair[1]);
-        // }
+        if (!this.state.value) {errors.push("Please enter contest value");}
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
         if (errors.length > 0) {
             this.setState({errors});
         }
@@ -113,10 +114,10 @@ class CreateContest extends React.Component {
                     />
                 </div>
                 <div className="formGroup">
-                    <label htmlFor="contestValue">Value</label>
+                    <label htmlFor="value">Value</label>
                     <input value={this.state.contestValue}
-                        onChange={(e) => this.setState({contestValue: e.target.value})} type="text"
-                        name="contestValue" id="contestValue" placeholder="$$$$"/>
+                        onChange={(e) => this.setState({value: e.target.value})} type="text"
+                        name="value" id="value" placeholder="$$$$"/>
                 </div>
                 <button className="submit" onClick={(e) => this.Send(e)}>Submit contest</button>
 

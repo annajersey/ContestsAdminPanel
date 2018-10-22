@@ -12,7 +12,7 @@ class Contest extends Component {
             contest: {
                 name:'Bershka',
                 address: 'Yoga Trapeze - SAMPLING',
-
+                value: 10000
             }
         };
     }
@@ -35,7 +35,7 @@ class Contest extends Component {
             <div className="constestPage">
                 <div className="header">
                     <div><h1>{this.state.contest.name}</h1><h2>{this.state.contest.address}</h2></div>
-                    <div><span>Campaign value:</span><span className="contestValue">10 000$</span></div>
+                    <div><span>Campaign value:</span><span className="contestValue">{this.state.contest.value}$</span></div>
                     <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;{this.state.contest.expirationTime&&<Timer expirationTime={this.state.contest.expirationTime} />}</div>
                 </div>
                 <div className="contest">

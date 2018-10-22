@@ -176,16 +176,16 @@
         top: -78px;
         background: #00bee4;
         position: absolute;
-
+        display: none;
         font-size: 9px;
         font-weight: bold;
         color: #ffffff;
         line-height: 11px;
         letter-spacing: 0.3px;
-        display: flex;
-        padding-left:4px;
+        padding-left: 4px;
         text-align: left;
-        padding-top:4px;
+        padding-top: 4px;
+
         .arrow {
             overflow: hidden;
             position: absolute;
@@ -209,6 +209,21 @@
             }
         }
     }
+    .socialContent {
+        div {
+            display: flex;
+            align-items: center
+        }
+        svg {
+            margin-left: 3px;
+            margin-right: 7px;
+            margin-top: 2px;
+        }
+    }
+    &:hover .socialPopup {
+        display: flex;
+    }
+
 }
 .submission {
     position: absolute;

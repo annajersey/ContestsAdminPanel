@@ -92,7 +92,8 @@ module.exports = {
             template: "./src/index.html"
         }),
         new webpack.DefinePlugin({
-            baseURL: JSON.stringify(basePath)
+            basePath: JSON.stringify(basePath),
+            baseUrl: JSON.stringify('http://dcodeit.net/anna.bogomiagkova/smartpay')
         })
     ]
 };

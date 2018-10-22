@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
+    <title>Repost</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M34.8888889,20.6 L34.8888889,19 L38,21.8 L34.8888889,24.6 L34.8888889,22.96 C32.6666667,22.96 31.1111111,23.6 30,25 C30.4444444,23 31.7777778,21 34.8888889,20.6 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Web-app/Leaderboard-popover" transform="translate(-872.000000, -409.000000)">
+            <g id="Popover" transform="translate(842.000000, 390.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Repost" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

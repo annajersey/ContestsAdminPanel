@@ -21,7 +21,7 @@ class App extends React.Component {
     }
 
     render() {
-        return (<BrowserRouter basename={baseURL}>
+        return (<BrowserRouter basename={basePath}>
             <main><Header isAdminLogin={this.state.isAdminLogin} />
                 <Switch>
                     <Route exact path="/login"
