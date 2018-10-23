@@ -10,9 +10,10 @@ class Contest extends Component {
         this.state = {
             page: "l",
             contest: {
-                name:'Bershka',
+                name: 'Bershka',
                 address: 'Yoga Trapeze - SAMPLING',
-                value: 10000
+                value: 10000,
+                expirationTime: -1
             }
         };
     }
@@ -35,8 +36,10 @@ class Contest extends Component {
             <div className="constestPage">
                 <div className="header">
                     <div><h1>{this.state.contest.name}</h1><h2>{this.state.contest.address}</h2></div>
-                    <div><span>Campaign value:</span><span className="contestValue">{this.state.contest.value}$</span></div>
-                    <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;{this.state.contest.expirationTime&&<Timer expirationTime={this.state.contest.expirationTime} />}</div>
+                    <div><span>Campaign value:</span><span className="contestValue">{this.state.contest.value}$</span>
+                    </div>
+                    <div className="contestTime"><TimerIcon/>&nbsp;&nbsp;{this.state.contest.expirationTime &&
+                    <Timer expirationTime={this.state.contest.expirationTime}/>}</div>
                 </div>
                 <div className="contest">
                     {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
@@ -66,7 +69,8 @@ class Contest extends Component {
                                 coffee-inspired, showcasing our brand alongside your daily routine. In your caption,
                                 talk about our product and tell the best coffee offer to your followers!
                             </div>
-                            {this.state.contest.imageId&&<img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>}
+                            {this.state.contest.imageId &&
+                            <img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>}
                         </div>}
                     </div>
                 </div>

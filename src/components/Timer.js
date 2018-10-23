@@ -17,7 +17,7 @@ class Timer extends React.Component {
 
     msToTime(expirationTime){
         var dateDiff = new Date(expirationTime) - new Date();
-        if(dateDiff<0) return '00:00:00';
+        if(dateDiff<=0) return '00:00:00';
         let seconds = (dateDiff / 1000);
         let minutes = parseInt(seconds / 60, 10);
         seconds = parseInt(seconds % 60);

@@ -22,7 +22,7 @@ class Home extends Component {
                     <Route  path="/contests-list" component={ContestsList} />
                     <Route  path="/contest/:id" component={Contest} />
                     <Route  path="/leaderboard" component={Leaderboard} />
-                    <Route  path="/submission/:id" component={Submission} />
+                    <Route  path="/submission/:submissionId" component={Submission} />
                 </div>
             </div>
 

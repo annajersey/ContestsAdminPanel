@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "fbgraphapi": "^0.5.1",
     "img-loader": "^3.0.0",
+    "likes": "^1.0.0",
     "moment": "^2.22.2",
     "react": "^16.5.2",
     "react-datepicker": "^1.7.0",
