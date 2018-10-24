@@ -15,6 +15,7 @@ class App extends React.Component {
 
     setLoggedIn() {
         localStorage.setItem("isLoggedIn", true);
+
         this.setState({
             isAdminLogin: true
         });

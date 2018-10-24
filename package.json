@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cryptr": "^4.0.0",
     "fbgraphapi": "^0.5.1",
     "img-loader": "^3.0.0",
     "likes": "^1.0.0",

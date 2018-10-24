@@ -1,7 +1,6 @@
-//TODO
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const basePath = "/";
 const webpack = require("webpack");
 module.exports = {
     entry: "./src/index.js",
@@ -28,7 +27,6 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g)/i,
-                //include: path.join(__dirname, 'assets/images/'),
                 use: [
                     {
                         loader: "url-loader",
@@ -94,7 +92,9 @@ module.exports = {
             template: "./src/index.html"
         }),
         new webpack.DefinePlugin({
-            baseURL: JSON.stringify(basePath)
+            basePath: JSON.stringify(basePath),
+            baseUrl: JSON.stringify('http://dcodeit.net/anna.bogomiagkova/smartpay'),
+            salt: 'abc'
         })
     ]
 };

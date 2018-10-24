@@ -93,7 +93,8 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             basePath: JSON.stringify(basePath),
-            baseUrl: JSON.stringify('http://dcodeit.net/anna.bogomiagkova/smartpay')
+            baseUrl: JSON.stringify('http://dcodeit.net/anna.bogomiagkova/smartpay'),
+            salt: 'abc'
         })
     ]
 };
