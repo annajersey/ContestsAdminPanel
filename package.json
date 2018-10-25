@@ -42,6 +42,7 @@
     "react-dom": "^16.5.2",
     "react-facebook": "^6.0.14",
     "react-fb-like": "^0.5.1",
+    "react-image-file": "^0.3.0",
     "react-motion-grid": "^1.2.3",
     "react-redux": "^5.0.7",
     "react-reorder": "^3.0.0-alpha.7",
