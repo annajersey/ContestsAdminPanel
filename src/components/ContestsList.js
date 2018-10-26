@@ -2,9 +2,9 @@ import React from "react";
 import Timer from "./Timer";
 import axios from "axios";
 import {ImageLoader} from "react-image-file";
-import $ from "jquery";
 import {apiBaseUrl} from "../constants";
-import {base64Encode} from "./Helper"
+import {base64Encode, getImage} from "./Helper";
+
 class ContestsList extends React.Component {
     constructor(props) {
         super(props);
@@ -16,28 +16,22 @@ class ContestsList extends React.Component {
         axios.defaults.headers.common["Authorization"] = this.AuthStr;
     }
 
-
-
     componentDidMount() {
         axios.get(apiBaseUrl + "/contest").then(res => {
             const contests = res.data;
             contests.forEach(c => {
-                $.ajax({
-                    url: `${apiBaseUrl}/image/${c.imageId}`,
-                    method: "GET",
-                    mimeType: "text/plain; charset=x-user-defined",
-                    beforeSend: (xhr) => {
-                        xhr.setRequestHeader("Authorization", this.AuthStr);
-                    },
-                    success: (data) => {
+                getImage(c.imageId).then(
+                    data => {
                         this.setState({
                             images: {
                                 ...this.state.images,
-                                [c.imageId]: 'data:image/jpeg;base64,' + base64Encode(data)
+                                [c.imageId]: "data:image/jpeg;base64," + data
                             }
-                        })
+                        });
                     }
-                });
+                ).catch(
+                    error => console.log(error)
+                );
 
             });
             this.setState({contests: res.data});
@@ -58,8 +52,7 @@ class ContestsList extends React.Component {
                 {this.state.contests.map(contest => {
                     return <div key={contest.id} className="constestBlock">
                         <img className="topImage" onClick={() => this.onContestClick(contest.id)}
-                             src={this.state.images[contest.imageId]}
-
+                            src={this.state.images[contest.imageId]}
                         />
                         <div className="shortInfo">
                             <h2 onClick={() => this.onContestClick(i)}>{contest.name}</h2>

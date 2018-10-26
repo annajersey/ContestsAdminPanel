@@ -1,6 +1,9 @@
+import $ from "jquery";
+import {apiBaseUrl} from "../constants";
+
 export const base64Encode = (str) => {
-    var CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    var out = "", i = 0, len = str.length, c1, c2, c3;
+    const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    let out = "", i = 0, len = str.length, c1, c2, c3;
     while (i < len) {
         c1 = str.charCodeAt(i++) & 0xff;
         if (i == len) {
@@ -24,4 +27,22 @@ export const base64Encode = (str) => {
         out += CHARS.charAt(c3 & 0x3F);
     }
     return out;
-}
+};
+
+export const getImage = (imageId) => {
+    const AuthStr = localStorage.getItem("token");
+    return new Promise(
+        (resolve, reject) => {
+            $.ajax({
+                url: `${apiBaseUrl}/image/${imageId}`,
+                method: "GET",
+                mimeType: "text/plain; charset=x-user-defined",
+                beforeSend: (xhr) => {
+                    xhr.setRequestHeader("Authorization", AuthStr);
+                },
+                success: (data) => {
+                    resolve(base64Encode(data));
+                }
+            });
+        });
+};

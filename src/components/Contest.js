@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import Leaderboard from "./Leaderboard";
-import TimerIcon from '../assets/images/timer-w.svg';
+import TimerIcon from "../assets/images/timer-w.svg";
 import * as axios from "axios";
 import Timer from "./Timer";
 import {apiBaseUrl} from "../constants";
+import {base64Encode, getImage} from "./Helper";
 
 class Contest extends Component {
     constructor(props) {
@@ -11,27 +12,35 @@ class Contest extends Component {
         this.state = {
             page: "l",
             contest: {
-                name: 'Bershka',
-                address: 'Yoga Trapeze - SAMPLING',
+                name: "Bershka",
+                address: "Yoga Trapeze - SAMPLING",
                 value: 10000,
                 expirationTime: -1
-            }
+            },
+            image:""
         };
-        const AuthStr = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kZXIua3Vwcmlrb3ZAY29kZWl0LmNvbS51YSIsImV4cCI6MTU0MTMzMjg3N30.DMnrycHPWrnh5p1-407PG55c-LmZxz8UWZPVFhHeiXWpYR-ltYj5U53tvFPp6YMVazXiGHT9KpKGblk2tNU8YQ";
-        axios.defaults.headers.common["Authorization"] = AuthStr;
+        this.AuthStr = localStorage.getItem("token");
+        axios.defaults.headers.common["Authorization"] = this.AuthStr;
     }
 
     componentDidMount() {
         axios({
-            url: apiBaseUrl+"/smartpay/contest/" + this.props.match.params.id,
+            url: apiBaseUrl + "/contest/" + this.props.match.params.id,
         })
             .then(response => {
-
                 this.setState({contest: response.data});
+                getImage(response.data.imageId).then(
+                    data => {
+                        this.setState({
+                            image: "data:image/jpeg;base64," + data
+                        });
+                    }
+                );
             })
             .catch((response) => {
                 console.log("error", response);
             });
+
     }
 
     render() {
@@ -48,10 +57,10 @@ class Contest extends Component {
                     {/*Contest <h3>ID: {this.props.match.params.id}</h3>*/}
                     <div className="switcher">
                         <button className={this.state.page === "l" ? "active leaderboardButton" : "leaderboardButton"}
-                                onClick={() => this.setState({page: "l"})}>Leaderboard
+                            onClick={() => this.setState({page: "l"})}>Leaderboard
                         </button>
                         <button className={this.state.page === "b" ? "active briefButton" : "briefButton"}
-                                onClick={() => this.setState({page: "b"})}>Brief
+                            onClick={() => this.setState({page: "b"})}>Brief
                         </button>
                     </div>
                     <div className="contestContent">
@@ -73,7 +82,7 @@ class Contest extends Component {
                                 talk about our product and tell the best coffee offer to your followers!
                             </div>
                             {this.state.contest.imageId &&
-                            <img src={`http://b.dcodeit.net:8080/smartpay/image/${this.state.contest.imageId}`}/>}
+                            <img src={this.state.image} /> }
                         </div>}
                     </div>
                 </div>
