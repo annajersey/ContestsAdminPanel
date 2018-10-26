@@ -10,11 +10,11 @@ import Header from "./components/Header";
 class App extends React.Component {
     constructor() {
         super();
-        this.state = {isAdminLogin: localStorage.isLoggedIn};
+        this.state = {isAdminLogin: localStorage.token?true:false};
     }
 
     setLoggedIn() {
-        localStorage.setItem("isLoggedIn", true);
+        //localStorage.setItem("isLoggedIn", true);
 
         this.setState({
             isAdminLogin: true

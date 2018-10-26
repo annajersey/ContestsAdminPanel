@@ -3,6 +3,7 @@ import Leaderboard from "./Leaderboard";
 import TimerIcon from '../assets/images/timer-w.svg';
 import * as axios from "axios";
 import Timer from "./Timer";
+import {apiBaseUrl} from "../constants";
 
 class Contest extends Component {
     constructor(props) {

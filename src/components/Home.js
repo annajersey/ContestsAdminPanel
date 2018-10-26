@@ -11,7 +11,7 @@ import Submission from "./Submission";
 class Home extends Component {
     constructor(props) {
         super(props);
-        if (!localStorage.getItem("isLoggedIn")) props.history.push("/login");
+        if (!localStorage.getItem("token")) props.history.push("/login");
     }
     render() {
         return (

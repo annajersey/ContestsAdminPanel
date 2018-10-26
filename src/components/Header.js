@@ -22,7 +22,7 @@ class Header extends Component {
                     <div className="userPanel">
                         <div className="notifications"><Notifications/></div>
                         <div className="profile" onClick={() => {
-                            localStorage.setItem("isLoggedIn", "");
+                            localStorage.removeItem("token");
                             this.props.history.push("/login");
                         }}><Icon/><span>Admin</span></div>
                     </div>
