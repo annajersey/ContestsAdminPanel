@@ -34,6 +34,7 @@
     "cryptr": "^4.0.0",
     "fbgraphapi": "^0.5.1",
     "img-loader": "^3.0.0",
+    "jquery": "^3.3.1",
     "likes": "^1.0.0",
     "moment": "^2.22.2",
     "react": "^16.5.2",

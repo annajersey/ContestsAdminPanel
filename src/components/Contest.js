@@ -16,11 +16,13 @@ class Contest extends Component {
                 expirationTime: -1
             }
         };
+        const AuthStr = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kZXIua3Vwcmlrb3ZAY29kZWl0LmNvbS51YSIsImV4cCI6MTU0MTMzMjg3N30.DMnrycHPWrnh5p1-407PG55c-LmZxz8UWZPVFhHeiXWpYR-ltYj5U53tvFPp6YMVazXiGHT9KpKGblk2tNU8YQ";
+        axios.defaults.headers.common["Authorization"] = AuthStr;
     }
 
     componentDidMount() {
         axios({
-            url: "http://b.dcodeit.net:8080/smartpay/contest/" + this.props.match.params.id,
+            url: apiBaseUrl+"/smartpay/contest/" + this.props.match.params.id,
         })
             .then(response => {
 
