@@ -4,18 +4,13 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import Home from "./components/Home.js";
 import Login from "./components/Login";
 import Header from "./components/Header";
-//import "./assets/styles/styles.scss";
-
-
 class App extends React.Component {
     constructor() {
         super();
-        this.state = {isAdminLogin: localStorage.token?true:false};
+        this.state = {isAdminLogin: localStorage.token ? true : false};
     }
 
     setLoggedIn() {
-        //localStorage.setItem("isLoggedIn", true);
-
         this.setState({
             isAdminLogin: true
         });
@@ -23,13 +18,13 @@ class App extends React.Component {
 
     render() {
         return (<BrowserRouter basename={basePath}>
-            <main><Header isAdminLogin={this.state.isAdminLogin} />
+            <main><Header isAdminLogin={this.state.isAdminLogin}/>
                 <Switch>
-                    <Route exact path="/login"
+                    <Route path="/login"
                         render={(props) => <Login {...props} setLoggedIn={() => this.setLoggedIn()}/>}/>
-                    <Route  path="/" render={(props) => (
+                    <Route path="/" render={() => (
                         this.state.isAdminLogin ? (
-                            <Home {...props} />
+                            <Home />
                         ) : (
                             <Redirect to="/login"/>
                         )

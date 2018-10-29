@@ -3,11 +3,11 @@ import React, {Component} from 'react'
 class NotFound extends Component {
     render() {
         return (
-            <div>
-                404 Not Found
+            <div className="notFound">
+                <h1>404 Not Found</h1>
             </div>
         );
     }
 }
 
-export default NotFound; //TODO
+export default NotFound;

@@ -29,7 +29,7 @@ class Login extends Component {
 
             .then((response) => {
                 console.log("response", response.data.token);
-                if (!response.data.token) this.onLoginError();
+                if (!response.data.token) {this.onLoginError();}
                 else {
                     localStorage.setItem("token", response.data.token);
                     this.props.setLoggedIn();
@@ -55,12 +55,12 @@ class Login extends Component {
                     <h1>Admin Login</h1>
                     <div className="formGroup">
                         <input type="text" value={this.state.username}
-                               onChange={(e) => this.setState({username: e.target.value})}
-                               placeholder="Login"/>
+                            onChange={(e) => this.setState({username: e.target.value})}
+                            placeholder="Login"/>
                     </div>
                     <div className="formGroup">
                         <input type="password" value={this.state.password}
-                               onChange={(e) => this.setState({password: e.target.value})} placeholder="Password"/>
+                            onChange={(e) => this.setState({password: e.target.value})} placeholder="Password"/>
                     </div>
                     <button className="submit" onClick={(e) => this.loginAdmin(e)}>Enter</button>
                 </form>

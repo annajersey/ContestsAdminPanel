@@ -2,17 +2,15 @@
     box-sizing: border-box;
     vertical-align: top;
 }
-
 @font-face {
     font-family: "SF Pro Text";
     src: url("../fonts/SF-Pro-Text-Regular.otf"),
-        url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
-        url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
-        url('../fonts/sf-pro-text-regular-webfont.woff') format('woff');
+    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+    url('../fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+    url('../fonts/sf-pro-text-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: "Source Sans Pro";
     src: url("../fonts/SourceSansPro-Regular.otf");
@@ -186,7 +184,10 @@ nav {
         }
     }
 }
-
+.notFound {
+    text-align: center;
+    margin: 30px;
+}
 @import 'login';
 
 @import 'createContest';
