@@ -47,15 +47,16 @@ module.exports = (env, options) => {
                         {
                             loader: "url-loader",
                             options: {
-                                name: "img/[name]-[hash:8].[ext]",
+                                name: "img/[path][name].[ext]",
+                                context: "src/assets/images",
                                 limit: 10000
                             }
                         },
                         {
                             loader: "img-loader",
                             options: {
-                                name: "img/[name]-[hash:8].[ext]",
-                                useRelativePath: true
+                                name: "img/[path][name].[ext]",
+                                context: "src/assets/images"
                             }
                         }
                     ]
