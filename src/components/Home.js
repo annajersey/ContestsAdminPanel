@@ -9,12 +9,18 @@ import Leaderboard from "./Leaderboard";
 import Submission from "./Submission";
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        if (!localStorage.getItem("token")) props.history.push("/login");
+    }
+
     render() {
         return (
             <div className="container">
                 <Nav/>
                 <div className="content">
                     <Switch>
+                        <Route exact path="/" component={ContestsList}/>
                         <Route path="/create-contest" component={CreateContest}/>
                         <Route path="/contests-list" component={ContestsList}/>
                         <Route path="/contest/:id" component={Contest}/>

@@ -18,7 +18,7 @@ class Header extends Component {
                 </div>
                 <div className="logo"><img src={require("../assets/images/logo.png")}/></div>
                 {
-                    this.props.isAdminLogin &&
+                    localStorage.getItem("token")  &&
                     <div className="userPanel">
                         <div className="notifications"><Notifications/></div>
                         <div className="profile" onClick={() => {
