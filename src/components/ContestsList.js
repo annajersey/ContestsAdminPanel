@@ -64,14 +64,7 @@ class ContestsList extends React.Component {
                         </div>
                     </div>;
                 })}
-                {[1,2,3].map(i => {
-                    return <div className="constestBlock">
-                        <img src={require("../assets/images/contests/"+i+".png")}  />
-                        <h2>Bershka</h2>
-                        <div className="brief">One of the best fashion shop</div>
-                        <div className="info"><span>12 Giveaway</span><span>36:32:25</span></div>
-                    </div>
-                })}
+
             </div>
         );
     }

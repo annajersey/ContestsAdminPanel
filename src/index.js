@@ -21,7 +21,7 @@ class App extends React.Component {
             <main><Header isAdminLogin={this.state.isAdminLogin}/>
                 <Switch>
                     <Route path="/login"
-                        render={(props) => <Login {...props} />}/>
+                        render={(props) => <Login {...props} setLoggedIn={this.setLoggedIn.bind(this)} />}/>
                     <Route path="/" render={(props) => (
                         this.state.isAdminLogin ? (
                             <Home {...props} />

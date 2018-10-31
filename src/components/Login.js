@@ -33,7 +33,7 @@ class Login extends Component {
                 else {
                     localStorage.setItem("token", response.data.token);
                     this.props.setLoggedIn();
-                    this.props.history.push("/contests-list");
+                    this.props.history.push("/");
                 }
             })
             .catch((error) => {
