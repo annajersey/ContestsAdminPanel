@@ -2,13 +2,14 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = (env, options) => {
-    const basePath = options.mode==="production" ? "/anna.bogomiagkova/smartpay/" : "/";
+    const basePath = options.mode === "production" ? "/anna.bogomiagkova/smartpay/" : "/";
     return {
         entry: "./src/index.js",
         output: {
             path: path.join(__dirname, "/dist"),
-            filename: "index-bundle.js",
+            filename: "main.js",
             publicPath: basePath
         },
         module: {
@@ -16,22 +17,21 @@ module.exports = (env, options) => {
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
-                    use: ["babel-loader"]
+                    use: {
+                        loader: "babel-loader"
+                    }
                 },
 
-                {
-                    test: /\.css$/,
-                    use: ["style-loader", "css-loader"]
-                },
-                // {
-                //     test: /\.scss$/,
-                //     use: ["style-loader", "css-loader", "sass-loader"]
-                // },
-                {
-                    test: /\.scss$/,
+                 {
+                    test: /\.(scss|css)$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        "css-loader",
+                        {
+                            loader: "css-loader",
+                            options: {
+                                minimize: true
+                            }
+                        },
                         {
                             loader: "postcss-loader",
                             options: {
@@ -116,11 +116,15 @@ module.exports = (env, options) => {
                 filename: "css/[name].css",
                 chunkFilename: "css/[id].css"
             }),
+            require("cssnano")({
+                preset: "default",
+            }),
             new webpack.DefinePlugin({
                 basePath: JSON.stringify(basePath),
                 baseUrl: JSON.stringify("http://dcodeit.net/anna.bogomiagkova/smartpay"),
                 salt: "abc"
-            })
+            }),
+
         ]
     };
 };
