@@ -1,16 +1,11 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const basePath = "/";
 module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "main.js",
-        publicPath: basePath
+        filename: "main.js"
     },
     module: {
         rules: [
@@ -114,12 +109,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "css/[name].css",
             chunkFilename: "css/[id].css"
-        }),
-        new webpack.DefinePlugin({
-            basePath: JSON.stringify(basePath),
-            baseUrl: JSON.stringify("http://dcodeit.net/anna.bogomiagkova/smartpay"),
-            salt: "abc"
-        }),
+        })
 
     ]
 
