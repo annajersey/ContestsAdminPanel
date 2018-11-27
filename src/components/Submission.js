@@ -26,7 +26,7 @@ class Submission extends React.Component {
                 this.setState({
                     likes: response.data.engagement.reaction_count,
                     share: response.data.engagement.share_count
-                })
+                });
             });
     }
 
@@ -50,19 +50,19 @@ class Submission extends React.Component {
                     talk about our product and tell the best coffee offer to your followers!
                 </div>
                 {/*<FacebookShareButton style={{"cursor": "pointer"}} url={baseUrl + "/submission/" + this.submissionId}*/}
-                                     {/*quote="We'd love your posts to generate enthusiasm about buying the*/}
-                    {/*product. This could be images of our coffee being made in a cup, mug or jar. We'd love*/}
-                    {/*your*/}
-                    {/*posts to be coffee-inspired, showcasing our brand alongside your daily routine. In your*/}
+                {/*quote="We'd love your posts to generate enthusiasm about buying the*/}
+                {/*product. This could be images of our coffee being made in a cup, mug or jar. We'd love*/}
+                {/*your*/}
+                {/*posts to be coffee-inspired, showcasing our brand alongside your daily routine. In your*/}
 
-                    {/*caption,*/}
-                    {/*talk about our product and tell the best coffee offer to your followers!">Share to*/}
-                    {/*Facebook</FacebookShareButton>*/}
+                {/*caption,*/}
+                {/*talk about our product and tell the best coffee offer to your followers!">Share to*/}
+                {/*Facebook</FacebookShareButton>*/}
 
                 {/*<br/><br/>*/}
                 {/*/!*{<FacebookShareCount url={baseUrl + "/submission/" + this.submissionId}/>}*!/*/}
                 {/*<FacebookProvider appId="344040206165646">*/}
-                    {/*<Like href={baseUrl + "/submission/" + this.submissionId} showFaces/>*/}
+                {/*<Like href={baseUrl + "/submission/" + this.submissionId} showFaces/>*/}
                 {/*</FacebookProvider>*/}
                 <img className="submissionImg" src={require("../assets/images/contestImage.png")}/>
 

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link, Route, Switch} from "react-router-dom";
+import {Link, Route, Switch, withRouter} from "react-router-dom";
 import CreateContest from "./CreateContest";
 import ContestsList from "./ContestsList";
 import Contest from "./Contest";
@@ -7,11 +7,13 @@ import Nav from "./Nav";
 import NotFound from "./NotFound";
 import Leaderboard from "./Leaderboard";
 import Submission from "./Submission";
+import connect from "react-redux/es/connect/connect";
+import {setAdminLoggedOut} from "../actions";
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        if (!localStorage.getItem("token")) props.history.push("/login");
+        if (!props.isAdminLogin) {props.history.push("/login");}
     }
 
     render() {
@@ -35,4 +37,8 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    const {isAdminLogin} = state;
+    return {isAdminLogin};
+};
+export default withRouter(connect(mapStateToProps)(Home));

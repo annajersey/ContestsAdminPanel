@@ -3,11 +3,14 @@ import React, {Component} from "react";
 import "../assets/styles/styles.scss";
 import axios from "axios";
 import {apiBaseUrl} from "../constants";
+import {withRouter} from "react-router-dom";
+import {setAdminLoggedIn} from "../actions";
+import {connect} from "react-redux";
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        if (localStorage.getItem("token")) {
+        if (this.props.isAdminLogin) {
             props.history.push("/contests-list");
         }
         this.initialState = {
@@ -28,11 +31,11 @@ class Login extends Component {
         })
 
             .then((response) => {
-                console.log("response", response.data.token);
-                if (!response.data.token) {this.onLoginError();}
+                if (!response.data.token) {
+                    this.onLoginError();
+                }
                 else {
-                    localStorage.setItem("token", response.data.token);
-                    this.props.setLoggedIn();
+                    this.props.setAdminLoggedIn(response.data.token);
                     this.props.history.push("/");
                 }
             })
@@ -68,5 +71,8 @@ class Login extends Component {
         );
     }
 }
-
-export default Login;
+const mapStateToProps = (state) => {
+    const {isAdminLogin} = state;
+    return {isAdminLogin};
+};
+export default withRouter(connect(mapStateToProps, {setAdminLoggedIn})(Login));

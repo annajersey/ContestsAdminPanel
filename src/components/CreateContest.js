@@ -37,8 +37,8 @@ class CreateContest extends React.Component {
         if (!this.state.name) {errors.push("Please enter contest name");}
         if (!this.state.description) {errors.push("Please enter contest brief");}
         if (!this.state.value) {errors.push("Please enter contest value");}
-        for (var pair of formData.entries()) {
-            console.log(pair[0] + ', ' + pair[1]);
+        for (const pair of formData.entries()) {
+            console.log(pair[0] + ", " + pair[1]);
         }
         if (errors.length > 0) {
             this.setState({errors});
