@@ -17,7 +17,7 @@ class Contest extends Component {
                 value: 10000,
                 expirationTime: -1
             },
-            image:""
+            image: ""
         };
         this.AuthStr = localStorage.getItem("token");
         axios.defaults.headers.common["Authorization"] = this.AuthStr;
@@ -82,7 +82,7 @@ class Contest extends Component {
                                 talk about our product and tell the best coffee offer to your followers!
                             </div>
                             {this.state.contest.imageId &&
-                            <img src={this.state.image} /> }
+                            <img src={this.state.image}/>}
                         </div>}
                     </div>
                 </div>

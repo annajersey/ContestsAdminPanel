@@ -7,6 +7,10 @@ import Video from "../assets/images/video.svg";
 import * as axios from "axios";
 
 class CreateContest extends React.Component {
+    fileChangedHandler = (event) => {
+        this.setState({image: event.target.files[0]});
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -30,13 +34,21 @@ class CreateContest extends React.Component {
         const formData = new FormData(this.form);
         formData.append("expirationTime", expirationTime);
         formData.append("address", this.state.hashtags);
-        if (this.state.image !== null) {formData.append("image", this.state.image, this.state.image.name);}
+        if (this.state.image !== null) {
+            formData.append("image", this.state.image, this.state.image.name);
+        }
         else {
             errors.push("Please select image");
         }
-        if (!this.state.name) {errors.push("Please enter contest name");}
-        if (!this.state.description) {errors.push("Please enter contest brief");}
-        if (!this.state.value) {errors.push("Please enter contest value");}
+        if (!this.state.name) {
+            errors.push("Please enter contest name");
+        }
+        if (!this.state.description) {
+            errors.push("Please enter contest brief");
+        }
+        if (!this.state.value) {
+            errors.push("Please enter contest value");
+        }
         for (const pair of formData.entries()) {
             console.log(pair[0] + ", " + pair[1]);
         }
@@ -58,10 +70,6 @@ class CreateContest extends React.Component {
                     console.log("error", response);
                 });
         }
-    }
-
-    fileChangedHandler = (event) => {
-        this.setState({image: event.target.files[0]});
     }
 
     render() {

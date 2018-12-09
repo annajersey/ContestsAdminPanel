@@ -12,7 +12,7 @@ class Leaderboard extends Component {
         super(props);
         this.state = {
             showSubmission: -1,
-            showSocial:-1
+            showSocial: -1
         };
     }
 
@@ -43,9 +43,9 @@ class Leaderboard extends Component {
                                     <div className="socialPopup">
                                         <div className="socialContent">
                                             <div>Facebook:</div>
-                                            <div>5<Like />5<Repost/></div>
+                                            <div>5<Like/>5<Repost/></div>
                                             <div>Instagram:</div>
-                                            <div>3<Like /></div>
+                                            <div>3<Like/></div>
                                         </div>
                                         <div className="arrow"></div>
                                     </div>

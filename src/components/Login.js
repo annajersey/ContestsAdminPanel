@@ -4,7 +4,7 @@ import "../assets/styles/styles.scss";
 import axios from "axios";
 import {apiBaseUrl} from "../constants";
 import {withRouter} from "react-router-dom";
-import {setAdminLoggedIn} from "../actions";
+import {loginAdmin} from "../actions";
 import {connect} from "react-redux";
 
 class Login extends Component {
@@ -23,30 +23,7 @@ class Login extends Component {
 
     loginAdmin(e) {
         e.preventDefault();
-        axios({
-            method: "POST",
-            url: apiBaseUrl + "/login",
-            data: {"username": this.state.username, "password": this.state.password},
-            config: {headers: {"Content-Type": "application/json;charset=UTF-8"}}
-        })
-
-            .then((response) => {
-                if (!response.data.token) {
-                    this.onLoginError();
-                }
-                else {
-                    this.props.setAdminLoggedIn(response.data.token);
-                    this.props.history.push("/");
-                }
-            })
-            .catch((error) => {
-                this.onLoginError();
-                console.log("error", error);
-            });
-
-    }
-
-    onLoginError() {
+        this.props.loginAdmin();
         this.setState({...this.initialState});
     }
 
@@ -71,8 +48,9 @@ class Login extends Component {
         );
     }
 }
+
 const mapStateToProps = (state) => {
     const {isAdminLogin} = state;
     return {isAdminLogin};
 };
-export default withRouter(connect(mapStateToProps, {setAdminLoggedIn})(Login));
+export default withRouter(connect(mapStateToProps, {loginAdmin})(Login));

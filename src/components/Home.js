@@ -13,7 +13,9 @@ import {setAdminLoggedOut} from "../actions";
 class Home extends Component {
     constructor(props) {
         super(props);
-        if (!props.isAdminLogin) {props.history.push("/login");}
+        if (!props.isAdminLogin) {
+            props.history.push("/login");
+        }
     }
 
     render() {
