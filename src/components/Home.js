@@ -1,14 +1,14 @@
 import React, {Component} from "react";
-import {Link, Route, Switch, withRouter} from "react-router-dom";
-import CreateContest from "./CreateContest";
-import ContestsList from "./ContestsList";
-import Contest from "./Contest";
-import Nav from "./Nav";
+import {Route, Switch, withRouter} from "react-router-dom";
+import CreateContest from "./CreateContest/CreateContest";
+import ContestsList from "./ContestsList/ContestsList";
+import Contest from "./Contest/Contest";
+import Nav from "./layout/Nav";
 import NotFound from "./NotFound";
-import Leaderboard from "./Leaderboard";
-import Submission from "./Submission";
+import Leaderboard from "./Contest/Leaderboard";
+import Submission from "./Contest/Submission";
 import connect from "react-redux/es/connect/connect";
-import {setAdminLoggedOut} from "../actions";
+
 
 class Home extends Component {
     constructor(props) {

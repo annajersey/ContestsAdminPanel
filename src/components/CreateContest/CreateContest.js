@@ -2,10 +2,10 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
-import Photo from "../assets/images/photo.svg";
-import Video from "../assets/images/video.svg";
+import Photo from "../../assets/images/photo.svg";
+import Video from "../../assets/images/video.svg";
 import * as axios from "axios";
-
+import "./createContest.scss";
 class CreateContest extends React.Component {
     fileChangedHandler = (event) => {
         this.setState({image: event.target.files[0]});

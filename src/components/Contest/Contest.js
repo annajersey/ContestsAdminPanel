@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import Leaderboard from "./Leaderboard";
-import TimerIcon from "../assets/images/timer-w.svg";
+import TimerIcon from "../../assets/images/timer-w.svg";
 import * as axios from "axios";
-import Timer from "./Timer";
-import {apiBaseUrl} from "../constants";
-import {base64Encode, getImage} from "./Helper";
-
+import Timer from "../layout/Timer";
+import {apiBaseUrl} from "../../constants";
+import {getImage} from "../Helper";
+import "./contest.scss";
 class Contest extends Component {
     constructor(props) {
         super(props);

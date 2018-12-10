@@ -1,10 +1,10 @@
 import React from "react";
-import Timer from "./Timer";
+import Timer from "../layout/Timer";
 import axios from "axios";
 import {ImageLoader} from "react-image-file";
-import {apiBaseUrl} from "../constants";
-import {base64Encode, getImage} from "./Helper";
-
+import {apiBaseUrl} from "../../constants";
+import {getImage} from "../Helper";
+import "./contestsList.scss";
 class ContestsList extends React.Component {
     constructor(props) {
         super(props);
@@ -58,13 +58,27 @@ class ContestsList extends React.Component {
                             <h2 onClick={() => this.onContestClick(i)}>{contest.name}</h2>
                             <div className="briefDesc">{contest.description.substring(0, 35)}</div>
                             <div className="info"><span>{contest.address}</span><span className="timer"><img
-                                src={require("../assets/images/timer.png")}/><Timer
+                                src={require("../../assets/images/timer.png")}/><Timer
                                 expirationTime={contest.expirationTime}/></span>
                             </div>
                         </div>
                     </div>;
                 })}
-
+                {[1,2,3].map(i => {
+                    return <div key={i} className="constestBlock">
+                        <img className="topImage" onClick={() => this.onContestClick(i)}
+                             src={require("../../assets/images/contests/"+i+".png")}
+                        />
+                        <div className="shortInfo">
+                            <h2 onClick={() => this.onContestClick(i)}>Bershka</h2>
+                            <div className="briefDesc">test</div>
+                            <div className="info"><span>Adress</span><span className="timer"><img
+                                src={require("../../assets/images/timer.png")}/><Timer
+                                expirationTime={0}/></span>
+                            </div>
+                        </div>
+                    </div>;
+                })}
             </div>
         );
     }

@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import Sortable from "sortablejs";
-import Facebook from "../assets/images/fbicon.svg";
-import Instagram from "../assets/images/instaicon.svg";
-import Like from "../assets/images/Like.svg";
-import Repost from "../assets/images/Repost.svg";
+import Facebook from "../../assets/images/fbicon.svg";
+import Instagram from "../../assets/images/instaicon.svg";
+import Like from "../../assets/images/Like.svg";
+import Repost from "../../assets/images/Repost.svg";
 import {FacebookShareButton, FacebookShareCount} from "react-share";
 import Submission from "./Submission";
 
@@ -35,7 +35,7 @@ class Leaderboard extends Component {
     render() {
         return (
             <div className="boardItems" ref={(e) => this.list = e}>
-                {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5].map((i, index) => {
+                {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5].map((i, index) => { //here we just have hardcoded ids
                     return (<div className="submissionMember">
                         <div className="member">
                             <div className="photo" onClick={() => this.setState({showSubmission: index})}>
@@ -50,7 +50,7 @@ class Leaderboard extends Component {
                                         <div className="arrow"></div>
                                     </div>
                                 </div>
-                                <img src={require("../assets/images/members/" + i + ".png")}/>
+                                <img src={require("../../assets/images/members/" + i + ".png")}/>
                             </div>
                             <div className="userName">Teresa<br/>Norris</div>
                             <div className="socials"><Facebook width="22" height="22"/><Instagram width="22"

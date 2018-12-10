@@ -1,11 +1,8 @@
 import React, {Component} from "react";
-
-import "../assets/styles/styles.scss";
-import axios from "axios";
-import {apiBaseUrl} from "../constants";
 import {withRouter} from "react-router-dom";
-import {loginAdmin} from "../actions";
 import {connect} from "react-redux";
+import {loginAdmin} from "../../actions/index";
+import "./login.scss";
 
 class Login extends Component {
     constructor(props) {

@@ -9,14 +9,15 @@ import history from "../config/history";
 
 export const loginAdmin = (username, password) => dispatch => {
     axios({
-        method: "POST",
-        url: apiBaseUrl + "/login",
+        method: "GET",
+        url: apiBaseUrl + "/users",
         data: {"username": username, "password": password},
         config: {headers: {"Content-Type": "application/json;charset=UTF-8"}}
     })
 
         .then((response) => {
             if (response.data.token) {
+                localStorage.setItem("token", response.data.token);
                 dispatch(setAdminLoggedIn(response.data.token));
                 history.push("/");
             }
@@ -35,9 +36,11 @@ export function setAdminLoggedIn(token) {
 }
 
 export function setAdminLoggedOut() {
-    const action = {
-        type: SET_ADMIN_LOGGED_OUT
-    };
-    return action;
+    return dispatch => {
+        localStorage.removeItem("token");
+        dispatch({
+            type: SET_ADMIN_LOGGED_OUT
+        })
+    }
 }
 

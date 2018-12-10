@@ -1,5 +1,5 @@
-import Facebook from "../assets/images/fbicon.svg";
-import Instagram from "../assets/images/instaicon.svg";
+import Facebook from "../../assets/images/fbicon.svg";
+import Instagram from "../../assets/images/instaicon.svg";
 import {FacebookShareButton} from "react-share";
 import {FacebookProvider, Like} from "react-facebook";
 import React from "react";
@@ -34,7 +34,7 @@ class Submission extends React.Component {
         return (
             <div>
                 <div className="submissionHeader">
-                    <img src={require("../assets/images/members/" + this.submissionId + ".png")}/>
+                    <img src={require("../../assets/images/members/" + this.submissionId + ".png")}/>
                     <div className="userName">Teresa<br/>Norris</div>
                     <Facebook width="14" height="14"/><Instagram width="14" height="14"/>
 
@@ -63,7 +63,7 @@ class Submission extends React.Component {
                 <FacebookProvider appId="344040206165646">
                     <Like href={baseUrl + "/submission/" + this.submissionId} showFaces/>
                 </FacebookProvider>
-                <img className="submissionImg" src={require("../assets/images/contestImage.png")}/>
+                <img className="submissionImg" src={require("../../assets/images/contestImage.png")}/>
 
             </div>
         );

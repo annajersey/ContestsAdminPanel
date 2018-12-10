@@ -1,0 +1,54 @@
+.createContest {
+  padding-left: 100px;
+  position: relative;
+  div.formGroup {
+    display: flex;
+  }
+  h1 {
+    margin-bottom: 60px;
+  }
+  textarea {
+    height: 187px;
+  }
+  select {
+    width: 340px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    height: 36px;
+  }
+
+  button.submit {
+    width: 253px;
+    margin-top: 80px;
+  }
+  .upload {
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    color: #606060;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      margin-right: 10px;
+    }
+    span {
+      color: #b1b1b1;
+    }
+  }
+  .uploadInput {
+    position: absolute;
+    opacity: 0;
+    width: 150px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .errors {
+    font-size: 11px;
+    color: #ff8b89;
+    position: absolute;
+    margin-top: -50px;
+  }
+}
+
